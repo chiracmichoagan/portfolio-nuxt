@@ -6,7 +6,7 @@
           <h1 class="text-4xl font-bold mb-8 text-center fade-in">About Me</h1>
           <div class="flex flex-col md:flex-row gap-8 items-center">
             <div class="md:w-1/3 fade-in delay-100">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+              <img src="../public/assets/hyogadr.jpg" 
                    alt="Profile Picture" 
                    class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg" />
             </div>

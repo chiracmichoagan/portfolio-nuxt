@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "title": "I Miei Progetti",
+    "subtitle": "Una raccolta dei miei lavori recenti e progetti personali",
+    "search": "Cerca progetti...",
+    "demo": "Demo",
+    "github": "GitHub",
+    "technologies": "Tecnologie utilizzate"
+  }
+}
