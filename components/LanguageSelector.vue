@@ -1,19 +1,24 @@
 <template>
   <div class="relative">
-    <UDropdown :items="languages" :popper="{ placement: 'bottom-end' }">
+    <UDropdown>
       <UButton color="gray" variant="ghost" class="flex items-center gap-2">
         <span class="text-xl">{{ getCurrentFlag }}</span>
         {{ currentLanguage.name }}
       </UButton>
 
-      <template #item="{ item }">
-        <button
-          class="w-full flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-          @click="switchLanguage(item.code)"
-        >
-          <span class="text-xl">{{ item.flag }}</span>
-          {{ item.name }}
-        </button>
+      <template #content>
+        <UDropdownItems>
+          <UDropdownItem
+            v-for="lang in languages"
+            :key="lang.code"
+            @click="switchLanguage(lang.code)"
+          >
+            <div class="flex items-center gap-2">
+              <span class="text-xl">{{ lang.flag }}</span>
+              {{ lang.name }}
+            </div>
+          </UDropdownItem>
+        </UDropdownItems>
       </template>
     </UDropdown>
   </div>

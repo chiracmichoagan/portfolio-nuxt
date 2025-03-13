@@ -9,12 +9,13 @@
             </h1>
             <div class="flex flex-col md:flex-row gap-8 items-center">
               <div class="md:w-1/3 fade-in delay-100">
-                <UAvatar
-                  src="../public/assets/hyogadr.jpg"
-                  alt="Profile Picture"
-                  size="2xl"
-                  class="w-64 h-64 ring-4 ring-primary-500 ring-offset-4 hover:scale-105 transition-transform duration-300"
-                />
+                <div class="w-full h-[300px] relative overflow-hidden rounded-full">
+                  <img 
+                    src="/assets/hyogadr.jpg" 
+                    alt="Profile Picture" 
+                    class="w-full h-full object-cover border-4 border-primary-500 shadow-2xl hover:scale-105 transition-transform duration-500 rounded-xl"
+                  />
+                </div>
               </div>
               <div class="md:w-2/3 fade-in delay-200">
                 <UCard>
