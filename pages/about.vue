@@ -5,11 +5,11 @@
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
             <h1 class="text-4xl font-bold mb-8 text-center fade-in">
-              <UBadge color="primary" size="lg" class="mb-4">About Me</UBadge>
+              <UBadge color="primary" size="lg" class="mb-4">À propos de moi</UBadge>
             </h1>
             <div class="flex flex-col md:flex-row gap-8 items-center">
               <div class="md:w-1/3 fade-in delay-100">
-                <div class="w-full h-[300px] relative overflow-hidden rounded-full">
+                <div class="w-[250px] h-[250px] relative overflow-hidden rounded-full">
                   <img 
                     src="/assets/hyogadr.jpg" 
                     alt="Profile Picture" 
@@ -26,13 +26,13 @@
                     </div>
                   </template>
                   <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                    Hello! I'm Your Name, a passionate web developer with over 5 years of experience in creating beautiful and functional websites and applications.
+                    Bonjour ! Je suis un développeur web passionné avec près d'un an d'expérience dans la création de sites web et d'applications.
                   </p>
                   <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                    I specialize in front-end development using modern frameworks like Vue.js, Nuxt, and React, as well as back-end development with Node.js and Python.
+                    Je me spécialise dans le développement backend avec Node.js et SpringBoot ainsi que la cybersécurité, et j'apprends continuellement de nouvelles technologies pour m'améliorer.
                   </p>
                   <p class="text-lg text-gray-600 dark:text-gray-400">
-                    When I'm not coding, you can find me hiking, reading, or experimenting with new technologies.
+                    Quand je ne code pas, j'aime faire de la randonnée, lire , voyager et explorer de nouvelles technologies.
                   </p>
                 </UCard>
               </div>
@@ -46,7 +46,7 @@
           <template #header>
             <div class="flex items-center gap-2 mb-4">
               <UIcon name="i-heroicons-briefcase" class="text-2xl text-primary-500" />
-              <h2 class="text-3xl font-bold">My Journey</h2>
+              <h2 class="text-3xl font-bold">Mon Parcours</h2>
             </div>
           </template>
           <UTimeline>
@@ -78,7 +78,7 @@
           <div class="max-w-4xl mx-auto">
             <div class="flex items-center gap-2 mb-8">
               <UIcon name="i-heroicons-code-bracket" class="text-2xl text-primary-500" />
-              <h2 class="text-3xl font-bold">Skills</h2>
+              <h2 class="text-3xl font-bold">Compétences</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
               <UHover v-for="(skill, index) in skills" :key="index">
@@ -98,7 +98,7 @@
           <template #header>
             <div class="flex items-center gap-2 mb-4">
               <UIcon name="i-heroicons-academic-cap" class="text-2xl text-primary-500" />
-              <h2 class="text-3xl font-bold">Education</h2>
+              <h2 class="text-3xl font-bold">Formation</h2>
             </div>
           </template>
           <div class="space-y-6">
@@ -127,22 +127,31 @@
 <script setup>
 const journey = [
   {
-    period: '2020 - Present',
-    title: 'Senior Web Developer',
-    company: 'Tech Solutions Inc.',
-    description: 'Leading the front-end development team, implementing modern web technologies, and mentoring junior developers.'
+    period: '2025 - Présent',
+    title: 'Développeur Web Junior',
+    company: 'Asclépios App',
+    description: 'Développement front-end avec Vue.js et Nuxt, participation à des projets d\'équipe et apprentissage continu.'
   },
   {
-    period: '2018 - 2020',
-    title: 'Web Developer',
+    period: '202',
+    title: 'Stage Développeur Web',
     company: 'Digital Creations',
-    description: 'Developed responsive websites and web applications for various clients using Vue.js and Node.js.'
+    description: 'Stage de 6 mois en développement web, travail sur des projets clients avec Vue.js.'
+  }
+]
+
+const education = [
+  {
+    period: '2022 - 2023',
+    degree: 'Formation Développeur Web',
+    institution: 'École du Numérique',
+    description: 'Formation intensive en développement web, spécialisation en technologies front-end et frameworks modernes.'
   },
   {
-    period: '2016 - 2018',
-    title: 'Junior Developer',
-    company: 'StartUp Innovations',
-    description: 'Started my career working on UI/UX design and front-end development for startup projects.'
+    period: '2019 - 2022',
+    degree: 'Licence en Informatique',
+    institution: 'Université de Technologie',
+    description: 'Formation en informatique générale, algorithmique et programmation.'
   }
 ]
 
@@ -153,24 +162,11 @@ const skills = [
   { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs' },
   { name: 'React', icon: 'i-simple-icons-react' },
   { name: 'Node.js', icon: 'i-simple-icons-nodedotjs' },
-  { name: 'Python', icon: 'i-simple-icons-python' },
+  { name: 'SpringBoot', icon: 'i-simple-icons:springboot' },
   { name: 'Git', icon: 'i-simple-icons-git' }
 ]
 
-const education = [
-  {
-    period: '2014 - 2016',
-    degree: 'Master in Computer Science',
-    institution: 'University of Technology',
-    description: 'Specialized in web development and software engineering with focus on modern frameworks and methodologies.'
-  },
-  {
-    period: '2010 - 2014',
-    degree: 'Bachelor in Computer Science',
-    institution: 'State University',
-    description: 'Studied fundamentals of programming, algorithms, and data structures with minor in graphic design.'
-  }
-]
+
 
 // Add GSAP animation when component is mounted
 onMounted(() => {

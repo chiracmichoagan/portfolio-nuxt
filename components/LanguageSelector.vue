@@ -25,6 +25,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 const { locale } = useI18n()
 
 const currentLocale = computed(() => locale.value)

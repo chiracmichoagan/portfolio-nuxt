@@ -3,9 +3,11 @@
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl font-bold mb-4 fade-in">{{ $t('projects.title') }}</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100">
-            {{ $t('projects.subtitle') }}
+          <h1 class="text-4xl font-bold mb-4 fade-in">Mes Projets</h1>
+          <p
+            class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
+          >
+            Une collection de mes travaux récents et projets personnels
           </p>
         </div>
       </div>
@@ -18,7 +20,7 @@
             <UInput
               v-model="search"
               icon="i-heroicons-magnifying-glass"
-              :placeholder="$t('projects.search')"
+              placeholder="Rechercher des projets..."
             />
           </div>
 
@@ -65,8 +67,7 @@
                       target="_blank"
                       color="primary"
                     >
-                      <UIcon name="i-heroicons-play-circle" class="mr-1" />
-                      {{ $t('projects.demo') }}
+                      Démo
                     </UButton>
                     <UButton
                       v-if="project.github"
@@ -130,12 +131,12 @@ const projects = [
   {
     title: "Moufid AI Chat",
     description:
-      "Une  application web qui utilise l'API Gemini pour permettre aux utilisateurs de discuter avec un chatbot avec possibilité de téléchargement format pdf quand le message est trop long.",
+      "Une  application web qui utilise l'API Gemini pour permettre aux utilisateurs de discuter avec un chatbot.",
     image:
-      "assets/gemini-chat",
-    technologies: ["Vue.js", "API OpenAI", "Tailwind CSS"],
-    demo: "",
-    github: "https://github.com/moufidagbannonde/Gemini-chat",
+      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&format&fit=crop&w=1470&q=80",
+    technologies: ["Vue.js", "API Integration", "Tailwind CSS"],
+    demo: "https://example.com/recipes",
+    github: "https://github.com/yourusername/recipes",
   },
   // {
   //   title: "Plateforme de Blog",
@@ -201,16 +202,19 @@ onMounted(() => {
   transform: translateY(-5px);
 }
 
+/* Smooth transition for all interactive elements */
 .fade-in,
 .UButton,
 .UBadge {
   transition: all 0.3s ease-in-out;
 }
 
+/* Smooth image zoom effect */
 .overflow-hidden {
   overflow: hidden;
 }
 
+/* Search input animation */
 .UInput {
   transition: all 0.3s ease;
 }
@@ -219,10 +223,12 @@ onMounted(() => {
   transform: scale(1.02);
 }
 
+/* Badge hover effect */
 .UBadge:hover {
   transform: scale(1.1);
 }
 
+/* Button hover animation */
 .UButton {
   position: relative;
   overflow: hidden;

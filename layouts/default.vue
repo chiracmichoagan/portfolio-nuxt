@@ -18,6 +18,7 @@
           <ULink to="/contact" active-class="text-primary-500 dark:text-primary-400" inactive-class="text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400">
             Contact
           </ULink>
+          <LanguageSelector />
         </UHorizontalNavigation>
         <UButton
           color="gray"
@@ -81,4 +82,5 @@ const isDark = computed(() => colorMode.value === 'dark')
 const toggleDark = () => {
   colorMode.preference = isDark.value ? 'light' : 'dark'
 }
+import LanguageSelector from '~/components/LanguageSelector.vue'
 </script>
