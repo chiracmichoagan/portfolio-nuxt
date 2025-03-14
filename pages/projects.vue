@@ -108,7 +108,7 @@ const projects = [
       "Un modèle de portfolio pour la présentation des compétences et atouts du dévéloppeur.",
     image: "assets/image.png",
     technologies: ["NuxtJS", "TypeScript", "TailwindCSS", "GSAP"],
-    demo: "/",
+    demo: "/projects",
     github: "https://github.com/moufidagbannonde/portfolio-nuxt",
   },
   {
@@ -116,7 +116,7 @@ const projects = [
     description: "Une application de blogs",
     image: "assets/connectly.png",
     technologies: ["NuxtJS", "NuxtUI", "Firebase"],
-    demo: "/",
+    demo: "/projects",
     github: "https://github.com/moufidagbannonde/connectly",
   },
   {
@@ -125,7 +125,7 @@ const projects = [
       "Une application qui vous offre des exercices de concentration, de détente , compte tenu de l'humeur de l'utilisateur . Affichage dynamique d'un graphique d'évolution de l'humeur",
     image: "assets/arthelays-mental.png",
     technologies: ["React JS", "Node JS", "MongoDB", "i18n"],
-    demo: "/",
+    demo: "/projects",
     github: "https://github.com/moufidagbannonde/Mental-Survivor",
   },
   {
@@ -135,7 +135,7 @@ const projects = [
     image:
       "assets/gemini-chat.png",
     technologies: ["Vue.js", "API Integration", "Tailwind CSS"],
-    demo: "/",
+    demo: "/projects",
     github: "https://github.com/moufidagbannonde/Gemini-Chat",
   },
   // {

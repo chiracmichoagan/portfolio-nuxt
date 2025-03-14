@@ -48,12 +48,12 @@
             <UCard class="fade-in delay-200">
               <template #header>
                 <div class="p-4 flex justify-center">
-                  <UIcon name="i-heroicons-paint-brush" class="text-5xl text-primary-500" />
+                  <UIcon name="i-heroicons-shield-check" class="text-5xl text-primary-500" />
                 </div>
               </template>
-              <h3 class="text-xl font-semibold mb-2">Design UI/UX</h3>
+              <h3 class="text-xl font-semibold mb-2">Analyse et gestion de sécurité des systèmes</h3>
               <p class="text-gray-600 dark:text-gray-400">
-                Conception d'interfaces utilisateur élégantes et intuitives pour une expérience utilisateur optimale.
+               Sécurisation des systèmes informatiques et optimisation des performances réseau !
               </p>
             </UCard>
 

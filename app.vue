@@ -1,9 +1,9 @@
 <template>
   <ClientOnly>
     <div
-      class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors"
+      class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors flex flex-col"
     >
-      <header class="p-4 bg-white dark:bg-gray-800 shadow-md">
+      <header class="p-4 bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 ">
         <div class="container mx-auto flex justify-between items-center">
           <NuxtLink to="/" class="text-xl font-bold">Txr Portfolio</NuxtLink>
 
@@ -71,6 +71,58 @@
       <main class="container mx-auto p-6">
         <NuxtPage />
       </main>
+    <!-- Pied de page -->
+<footer class="bg-white dark:bg-gray-800 shadow-md py-12 mt-auto">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <!-- Section Présentation -->
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Txr Portfolio</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0">
+          Développeur Full Stack passionné par la création d'applications web modernes
+        </p>
+      </div>
+      
+      <!-- Section Liens rapides -->
+      <div class="text-center md:text-left">
+        <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">Liens rapides</h4>
+        <div class="flex flex-col space-y-2 items-center md:items-start">
+          <NuxtLink 
+            v-for="item in navItems" 
+            :key="item.to"
+            :to="item.to"
+            class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+          >
+            {{ item.label }}
+          </NuxtLink>
+        </div>
+      </div>
+      
+      <!-- Section Réseaux sociaux -->
+      <div class="text-center md:text-left">
+        <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">Réseaux sociaux</h4>
+        <div class="flex justify-center space-x-4 md:justify-start">
+          <a href="https://github.com/moufidagbannonde" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">
+            <UIcon name="i-simple-icons-github" class="text-2xl" />
+          </a>
+          <a href="https://linkedin.com/moufidagbannonde" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">
+            <UIcon name="i-simple-icons-linkedin" class="text-2xl" />
+          </a>
+          <a href="https://x.com/@teixeira00125" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors">
+            <UIcon name="i-simple-icons-twitter" class="text-2xl" />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright et Mention -->
+    <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+      <p>&copy; {{ new Date().getFullYear() }} Txr Portfolio. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+      
       <!-- Terminal flottant -->
       <div
         v-if="showTerminal"

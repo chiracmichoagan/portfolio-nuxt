@@ -19,22 +19,23 @@
               </div>
               <div class="md:w-2/3 fade-in delay-200">
                 <UCard>
-                  <template #header>
-                    <div class="flex items-center gap-2">
-                      <UIcon name="i-heroicons-user-circle" class="text-2xl text-primary-500" />
-                      <h3 class="text-xl font-semibold">Introduction</h3>
-                    </div>
-                  </template>
-                  <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                    Bonjour ! Je suis un développeur web passionné avec près d'un an d'expérience dans la création de sites web et d'applications.
-                  </p>
-                  <p class="text-lg text-gray-600 dark:text-gray-400 mb-4">
-                    Je me spécialise dans le développement backend avec Node.js et SpringBoot ainsi que la cybersécurité, et j'apprends continuellement de nouvelles technologies pour m'améliorer.
-                  </p>
-                  <p class="text-lg text-gray-600 dark:text-gray-400">
-                    Quand je ne code pas, j'aime faire de la randonnée, lire , voyager et explorer de nouvelles technologies.
-                  </p>
-                </UCard>
+  <template #header>
+    <div class="flex items-center gap-2">
+      <UIcon name="i-heroicons-user-circle" class="text-2xl text-primary-500" />
+      <h3 class="text-xl font-semibold">Présentation</h3>
+    </div>
+  </template>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+    Bonjour, je suis un développeur web passionné, fort d'une expérience de près d'un an dans la création de sites web et d'applications. Mon expertise réside principalement dans le développement backend, avec une maîtrise des technologies telles que Node.js et SpringBoot.
+  </p>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+    Mon domaine d'intérêt s'étend également à la cybersécurité, et je suis constamment en quête d'apprentissage pour me perfectionner dans les nouvelles technologies et renforcer mes compétences techniques.
+  </p>
+  <p class="text-sm text-gray-600 dark:text-gray-400">
+    En dehors de mon activité professionnelle, je nourris une grande passion pour la randonnée, la lecture, les voyages et l'exploration de nouvelles innovations technologiques.
+  </p>
+</UCard>
+
               </div>
             </div>
           </div>
@@ -169,15 +170,17 @@ const education = [
 
 const skills = [
   { name: 'HTML/CSS', icon: 'i-simple-icons-html5', level: '90' },
-  { name: 'JavaScript', icon: 'i-simple-icons-javascript', level: '85' },
-  { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs', level: '75' },
-  { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs', level: '45'},
   { name: 'React', icon: 'i-simple-icons-react', level: '88' },
   { name: 'Node.js', icon: 'i-simple-icons-nodedotjs' , level: '88'},
-  { name: 'SpringBoot', icon: 'i-simple-icons:springboot', level: '45' },
-  { name: 'Git', icon: 'i-simple-icons-git' , level: '25'},
+  { name: 'JavaScript', icon: 'i-simple-icons-javascript', level: '85' },
+  { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs', level: '75' },
   { name: 'GitHub', icon: 'i-simple-icons-github', level: '60' },
-  { name: 'Hacking', icon: 'i-simple-icons-hackaday', level: '35'}
+  { name: 'SpringBoot', icon: 'i-simple-icons:springboot', level: '45' },
+  { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs', level: '40'},
+  { name: 'Angular', icon: 'i-simple-icons:angular', level: '40'},
+  { name: 'Hacking', icon: 'i-simple-icons-hackaday', level: '35'},
+  { name: 'Git', icon: 'i-simple-icons-git' , level: '25'},
+  { name: 'Python', icon: 'i-simple-icons:python' , level: '10'},
 ]
 
 // Animation GSAP

@@ -4,9 +4,6 @@
       <section class="py-20 bg-gray-50 dark:bg-gray-900 rounded-xl mb-8">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-4 fade-in">
-              <UBadge color="primary" size="lg" class="mb-4">Contactez-moi</UBadge>
-            </h1>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100">
               Vous avez un projet en tête ou souhaitez discuter d'une opportunité ? N'hésitez pas à me contacter !
             </p>
@@ -38,8 +35,8 @@
                       />
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Email</div>
-                        <a href="mailto:your.email@example.com" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
-                          your.email@example.com
+                        <a href="mailto:moufidteixeira@gmail.com" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
+                          moufidteixeira@gmail.com
                         </a>
                       </div>
                     </div>
@@ -55,7 +52,7 @@
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Téléphone</div>
                         <a href="tel:+1234567890" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
-                          +1 (234) 567-890
+                          +229 (019) 558-8789
                         </a>
                       </div>
                     </div>
@@ -71,7 +68,7 @@
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Localisation</div>
                         <span class="text-gray-800 dark:text-gray-200 font-medium">
-                          Paris, France
+                          Cotonou, Bénin
                         </span>
                       </div>
                     </div>
@@ -86,7 +83,7 @@
                             color="primary"
                             variant="ghost"
                             icon="i-simple-icons-github"
-                            to="https://github.com/yourusername"
+                            to="https://github.com/moufidagbannonde"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
@@ -96,7 +93,7 @@
                             color="primary"
                             variant="ghost"
                             icon="i-simple-icons-linkedin"
-                            to="https://linkedin.com/in/yourusername"
+                            to="https://linkedin.com/in/moufidagbannonde"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
@@ -106,12 +103,12 @@
                             color="primary"
                             variant="ghost"
                             icon="i-simple-icons-twitter"
-                            to="https://twitter.com/yourusername"
+                            to="https://x.com/@teixeira00125"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
                         </UTooltip>
-                        <UTooltip text="Instagram">
+                        <!-- <UTooltip text="Instagram">
                           <UButton
                             color="primary"
                             variant="ghost"
@@ -120,7 +117,7 @@
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
-                        </UTooltip>
+                        </UTooltip> -->
                       </div>
                     </div>
                   </template>
@@ -225,7 +222,7 @@ const formStatus = ref({
 const submitForm = async () => {
   loading.value = true
   
-  // Validation simple
+  // Validation du formulaire
   if (!form.value.name || !form.value.email || !form.value.subject || !form.value.message) {
     formStatus.value = {
       show: true,
@@ -237,7 +234,7 @@ const submitForm = async () => {
     return
   }
   
-  // Simulation d'envoi du formulaire
+  // Envoi du formulaire
   await new Promise(resolve => setTimeout(resolve, 1500))
   
   // Affichage du message de succès
@@ -264,7 +261,7 @@ const submitForm = async () => {
   }, 5000)
 }
 
-// Animation GSAP au chargement du composant
+// Animation  au chargement du composant
 onMounted(() => {
   if (process.client) {
     import('gsap').then(({ gsap }) => {
@@ -277,5 +274,6 @@ onMounted(() => {
       })
     })
   }
-})
+});
+
 </script>
