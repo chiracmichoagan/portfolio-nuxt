@@ -4,11 +4,11 @@
       <section class="py-20 bg-gray-50 dark:bg-gray-900 rounded-xl mb-8">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold mb-8 text-center fade-in">
+            <!-- <h1 class="text-4xl font-bold mb-8 text-center fade-in">
               <UBadge color="primary" size="lg" class="mb-4">À propos de moi</UBadge>
-            </h1>
+            </h1> -->
             <div class="flex flex-col md:flex-row gap-8 items-center">
-              <div class="md:w-1/3 fade-in delay-100">
+              <div class="md:w-1/3 fade-in delay-100 m-3">
                 <div class="w-[250px] h-[250px] relative overflow-hidden rounded-full">
                   <img 
                     src="/assets/hyogadr.jpg" 
@@ -49,30 +49,30 @@
               <h2 class="text-3xl font-bold">Mon Parcours</h2>
             </div>
           </template>
-          <UTimeline>
-            <UTimelineItem 
-              v-for="(item, index) in journey" 
-              :key="index" 
-              class="fade-in"
-              :class="`delay-${index * 100}`"
-            >
-              <template #icon>
-                <UIcon name="i-heroicons-academic-cap" />
-              </template>
-              <template #title>
-                <h4 class="text-lg font-semibold">{{ item.title }}</h4>
-              </template>
-              <template #description>
-                <p class="text-gray-600 dark:text-gray-400">{{ item.description }}</p>
-              </template>
-              <template #time>
-                <UBadge color="primary" variant="soft">{{ item.period }}</UBadge>
-              </template>
-            </UTimelineItem>
-          </UTimeline>
+          
+            <div class="space-y-6">
+            <div v-for="(item, index) in journey" :key="index" class="fade-in" :class="`delay-${index * 100}`">
+              <div class="flex flex-col md:flex-row border-l-4 border-primary-500 pl-4 pb-6">
+                <div class="md:w-1/4 mb-2 md:mb-0">
+                  <UBadge color="primary" variant="soft" size="lg">{{ item.period }}</UBadge>
+                </div>
+                <div class="md:w-3/4">
+                  <div class="flex items-center gap-2 mb-2">
+                    <UIcon name="i-heroicons-academic-cap" class="text-primary-500" />
+                    <h4 class="text-lg font-semibold">{{ item.title }}</h4>
+                  </div>
+                  <p class="text-gray-600 dark:text-gray-400 mb-2">
+                    <UIcon name="i-heroicons-building-office" class="inline mr-2" />
+                    {{ item.company }}
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400">{{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>          
         </UCard>
       </section>
-
+<!-- compétences -->
       <section class="py-16 bg-gray-50 dark:bg-gray-900 rounded-xl">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
@@ -127,48 +127,60 @@
 <script setup>
 const journey = [
   {
-    period: '2025 - Présent',
-    title: 'Développeur Web Junior',
+    period: 'Janvier 2025 - Présent',
+    title: 'Développeur fullstack ReactJS NodeJS',
     company: 'Asclépios App',
-    description: 'Développement front-end avec Vue.js et Nuxt, participation à des projets d\'équipe et apprentissage continu.'
+    description: 'Développement d\'une application de gestion de dossier médical avec analyse de données de patients...'
   },
   {
-    period: '202',
-    title: 'Stage Développeur Web',
-    company: 'Digital Creations',
-    description: 'Stage de 6 mois en développement web, travail sur des projets clients avec Vue.js.'
+    period: 'Octobre 2024 - Janvier 2025',
+    title: 'Dévéloppeur fullstack VueJS NodeJS',
+    company: 'Catarina',
+    description: 'Collaboration au sein d\'une équipe dynamique sur un projet de gestion de fiches, des appels entrants , de qualification pour un centre d\'appels'
+  },
+  {
+    period: 'Mai 2024 - Octobre 2024',
+    title: 'Bootcamp',
+    company: 'HighFive',
+    description: 'Bootcamp accéléré de stacks plus utilisés avec un système learning-by-doing ! Avec plus de pratiques que de théories'
   }
 ]
-
 const education = [
   {
-    period: '2022 - 2023',
-    degree: 'Formation Développeur Web',
-    institution: 'École du Numérique',
-    description: 'Formation intensive en développement web, spécialisation en technologies front-end et frameworks modernes.'
+    period: '2025-Présent',
+    degree: 'Stagiaire Développeur Web',
+    institution: 'VIPP Interstis Bénin',
+    description: 'Développement d\'applications afin d\'optimiser l\'utilisation des outils internes de l\'entreprise.'
   },
   {
-    period: '2019 - 2022',
-    degree: 'Licence en Informatique',
-    institution: 'Université de Technologie',
-    description: 'Formation en informatique générale, algorithmique et programmation.'
+    period: '2024 - 2025',
+    degree: 'Formation Développeur Web',
+    institution: 'HighFive University',
+    description: 'Bootcamp intensif en développement web, avec une spécialisation fullstack dans divers langages de programmation.'
+  },
+  {
+    period: '2022 - 2024',
+    degree: 'Mathématiques et Informatique Appliquées',
+    institution: 'Université d\'Abomey-Calavi',
+    description: 'Formation en mathématiques générales, algorithmique avancée et gestion des bases de données.'
   }
 ]
 
+
 const skills = [
-  { name: 'HTML/CSS', icon: 'i-simple-icons-html5' },
-  { name: 'JavaScript', icon: 'i-simple-icons-javascript' },
-  { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs' },
-  { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs' },
-  { name: 'React', icon: 'i-simple-icons-react' },
-  { name: 'Node.js', icon: 'i-simple-icons-nodedotjs' },
-  { name: 'SpringBoot', icon: 'i-simple-icons:springboot' },
-  { name: 'Git', icon: 'i-simple-icons-git' }
+  { name: 'HTML/CSS', icon: 'i-simple-icons-html5', level: '90' },
+  { name: 'JavaScript', icon: 'i-simple-icons-javascript', level: '85' },
+  { name: 'Vue.js', icon: 'i-simple-icons-vuedotjs', level: '75' },
+  { name: 'Nuxt.js', icon: 'i-simple-icons-nuxtdotjs', level: '45'},
+  { name: 'React', icon: 'i-simple-icons-react', level: '88' },
+  { name: 'Node.js', icon: 'i-simple-icons-nodedotjs' , level: '88'},
+  { name: 'SpringBoot', icon: 'i-simple-icons:springboot', level: '45' },
+  { name: 'Git', icon: 'i-simple-icons-git' , level: '25'},
+  { name: 'GitHub', icon: 'i-simple-icons-github', level: '60' },
+  { name: 'Hacking', icon: 'i-simple-icons-hackaday', level: '35'}
 ]
 
-
-
-// Add GSAP animation when component is mounted
+// Animation GSAP
 onMounted(() => {
   if (process.client) {
     import('gsap').then(({ gsap }) => {

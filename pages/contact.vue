@@ -1,116 +1,208 @@
 <template>
   <div>
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl font-bold mb-4 fade-in">Get In Touch</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100">
-            Have a question or want to work together? Feel free to contact me!
-          </p>
+    <UContainer>
+      <section class="py-20 bg-gray-50 dark:bg-gray-900 rounded-xl mb-8">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4 fade-in">
+              <UBadge color="primary" size="lg" class="mb-4">Contactez-moi</UBadge>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100">
+              Vous avez un projet en tête ou souhaitez discuter d'une opportunité ? N'hésitez pas à me contacter !
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="py-16">
-      <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <div class="grid md:grid-cols-2 gap-12">
-            <div class="fade-in delay-200">
-              <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
-              <div class="space-y-4">
-                <div class="flex items-center">
-                  <UIcon name="i-heroicons-envelope" class="text-2xl text-primary-500 mr-4" />
-                  <a href="mailto:your.email@example.com" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">
-                    your.email@example.com
-                  </a>
-                </div>
-                <div class="flex items-center">
-                  <UIcon name="i-heroicons-phone" class="text-2xl text-primary-500 mr-4" />
-                  <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400">
-                    +1 (234) 567-890
-                  </a>
-                </div>
-                <div class="flex items-center">
-                  <UIcon name="i-heroicons-map-pin" class="text-2xl text-primary-500 mr-4" />
-                  <span class="text-gray-600 dark:text-gray-400">
-                    City, Country
-                  </span>
-                </div>
-              </div>
-
-              <h2 class="text-2xl font-bold mt-12 mb-6">Connect With Me</h2>
-              <div class="flex space-x-4">
-                <UButton
-                  color="gray"
-                  variant="ghost"
-                  icon="i-simple-icons-github"
-                  to="https://github.com/yourusername"
-                  target="_blank"
-                />
-                <UButton
-                  color="gray"
-                  variant="ghost"
-                  icon="i-simple-icons-linkedin"
-                  to="https://linkedin.com/in/yourusername"
-                  target="_blank"
-                />
-                <UButton
-                  color="gray"
-                  variant="ghost"
-                  icon="i-simple-icons-twitter"
-                  to="https://twitter.com/yourusername"
-                  target="_blank"
-                />
-                <UButton
-                  color="gray"
-                  variant="ghost"
-                  icon="i-simple-icons-instagram"
-                  to="https://instagram.com/yourusername"
-                  target="_blank"
-                />
-              </div>
-            </div>
-
-            <div class="fade-in delay-300">
-              <h2 class="text-2xl font-bold mb-6">Send Me a Message</h2>
-              <form @submit.prevent="submitForm">
-                <div class="space-y-4">
-                  <UFormGroup label="Name" name="name">
-                    <UInput v-model="form.name" placeholder="Your name" />
-                  </UFormGroup>
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+              <div class="fade-in delay-200">
+                <UCard class="h-full">
+                  <template #header>
+                    <div class="flex items-center gap-2 mb-2">
+                      <UIcon name="i-heroicons-information-circle" class="text-2xl text-primary-500" />
+                      <h2 class="text-2xl font-bold">Informations de contact</h2>
+                    </div>
+                  </template>
                   
-                  <UFormGroup label="Email" name="email">
-                    <UInput v-model="form.email" placeholder="Your email" type="email" />
-                  </UFormGroup>
-                  
-                  <UFormGroup label="Subject" name="subject">
-                    <UInput v-model="form.subject" placeholder="Subject" />
-                  </UFormGroup>
-                  
-                  <UFormGroup label="Message" name="message">
-                    <UTextarea v-model="form.message" placeholder="Your message" rows="5" />
-                  </UFormGroup>
-                  
-                  <div>
-                    <UButton type="submit" color="primary" :loading="loading" :disabled="loading">
-                      Send Message
-                    </UButton>
+                  <div class="space-y-6 py-4">
+                    <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                      <UAvatar
+                        icon="i-heroicons-envelope"
+                        color="primary"
+                        variant="solid"
+                        size="lg"
+                        class="mr-4"
+                      />
+                      <div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">Email</div>
+                        <a href="mailto:your.email@example.com" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
+                          your.email@example.com
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                      <UAvatar
+                        icon="i-heroicons-phone"
+                        color="primary"
+                        variant="solid"
+                        size="lg"
+                        class="mr-4"
+                      />
+                      <div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">Téléphone</div>
+                        <a href="tel:+1234567890" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
+                          +1 (234) 567-890
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                      <UAvatar
+                        icon="i-heroicons-map-pin"
+                        color="primary"
+                        variant="solid"
+                        size="lg"
+                        class="mr-4"
+                      />
+                      <div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">Localisation</div>
+                        <span class="text-gray-800 dark:text-gray-200 font-medium">
+                          Paris, France
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </form>
-              
-              <UAlert
-                v-if="formStatus.show"
-                :type="formStatus.type"
-                :title="formStatus.title"
-                :description="formStatus.message"
-                class="mt-4"
-              />
+
+                  <template #footer>
+                    <div>
+                      <h3 class="text-lg font-semibold mb-4">Retrouvez-moi sur les réseaux</h3>
+                      <div class="flex space-x-3">
+                        <UTooltip text="GitHub">
+                          <UButton
+                            color="primary"
+                            variant="ghost"
+                            icon="i-simple-icons-github"
+                            to="https://github.com/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
+                        <UTooltip text="LinkedIn">
+                          <UButton
+                            color="primary"
+                            variant="ghost"
+                            icon="i-simple-icons-linkedin"
+                            to="https://linkedin.com/in/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
+                        <UTooltip text="Twitter">
+                          <UButton
+                            color="primary"
+                            variant="ghost"
+                            icon="i-simple-icons-twitter"
+                            to="https://twitter.com/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
+                        <UTooltip text="Instagram">
+                          <UButton
+                            color="primary"
+                            variant="ghost"
+                            icon="i-simple-icons-instagram"
+                            to="https://instagram.com/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
+                      </div>
+                    </div>
+                  </template>
+                </UCard>
+              </div>
+
+              <div class="fade-in delay-300">
+                <UCard>
+                  <template #header>
+                    <div class="flex items-center gap-2 mb-2">
+                      <UIcon name="i-heroicons-chat-bubble-left-right" class="text-2xl text-primary-500" />
+                      <h2 class="text-2xl font-bold">Envoyez-moi un message</h2>
+                    </div>
+                  </template>
+                  
+                  <form @submit.prevent="submitForm" class="space-y-4">
+                    <UFormGroup label="Nom" name="name" required>
+                      <UInput 
+                        v-model="form.name" 
+                        placeholder="Votre nom" 
+                        icon="i-heroicons-user"
+                        :ui="{ icon: { trailing: { pointer: '' } } }"
+                      />
+                    </UFormGroup>
+                    
+                    <UFormGroup label="Email" name="email" required>
+                      <UInput 
+                        v-model="form.email" 
+                        placeholder="Votre email" 
+                        type="email" 
+                        icon="i-heroicons-envelope"
+                        :ui="{ icon: { trailing: { pointer: '' } } }"
+                      />
+                    </UFormGroup>
+                    
+                    <UFormGroup label="Sujet" name="subject" required>
+                      <UInput 
+                        v-model="form.subject" 
+                        placeholder="Sujet de votre message" 
+                        icon="i-heroicons-chat-bubble-bottom-center-text"
+                        :ui="{ icon: { trailing: { pointer: '' } } }"
+                      />
+                    </UFormGroup>
+                    
+                    <UFormGroup label="Message" name="message" required>
+                      <UTextarea 
+                        v-model="form.message" 
+                        placeholder="Détaillez votre demande ici..." 
+                        rows="5" 
+                      />
+                    </UFormGroup>
+                    
+                    <div class="flex justify-end">
+                      <UButton 
+                        type="submit" 
+                        color="primary" 
+                        :loading="loading" 
+                        :disabled="loading"
+                        size="lg"
+                        icon="i-heroicons-paper-airplane"
+                        class="w-full md:w-auto"
+                      >
+                        Envoyer le message
+                      </UButton>
+                    </div>
+                  </form>
+                  
+                  <UAlert
+                    v-if="formStatus.show"
+                    :type="formStatus.type"
+                    :title="formStatus.title"
+                    :description="formStatus.message"
+                    class="mt-4"
+                    icon="i-heroicons-check-circle"
+                  />
+                </UCard>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </UContainer>
   </div>
 </template>
 
@@ -133,18 +225,30 @@ const formStatus = ref({
 const submitForm = async () => {
   loading.value = true
   
-  // Simulate form submission
+  // Validation simple
+  if (!form.value.name || !form.value.email || !form.value.subject || !form.value.message) {
+    formStatus.value = {
+      show: true,
+      type: 'danger',
+      title: 'Erreur',
+      message: 'Veuillez remplir tous les champs du formulaire.'
+    }
+    loading.value = false
+    return
+  }
+  
+  // Simulation d'envoi du formulaire
   await new Promise(resolve => setTimeout(resolve, 1500))
   
-  // Show success message (in a real app, you would send the form data to a server)
+  // Affichage du message de succès
   formStatus.value = {
     show: true,
     type: 'success',
-    title: 'Message Sent!',
-    message: 'Thank you for your message. I will get back to you as soon as possible.'
+    title: 'Message envoyé !',
+    message: 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.'
   }
   
-  // Reset form
+  // Réinitialisation du formulaire
   form.value = {
     name: '',
     email: '',
@@ -154,13 +258,13 @@ const submitForm = async () => {
   
   loading.value = false
   
-  // Hide the alert after 5 seconds
+  // Masquer l'alerte après 5 secondes
   setTimeout(() => {
     formStatus.value.show = false
   }, 5000)
 }
 
-// Add GSAP animation when component is mounted
+// Animation GSAP au chargement du composant
 onMounted(() => {
   if (process.client) {
     import('gsap').then(({ gsap }) => {

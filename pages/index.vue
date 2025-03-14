@@ -86,7 +86,7 @@
               <p class="text-gray-600 dark:text-gray-400 mb-4">
                 {{ project.description }}
               </p>
-              <template #footer>
+              <!-- <template #footer>
                 <UButton
                   :to="`/projects/${index}`"
                   color="primary"
@@ -94,7 +94,7 @@
                 >
                   Voir les détails
                 </UButton>
-              </template>
+              </template> -->
             </UCard>
           </div>
           <div class="mt-8 fade-in delay-300">
@@ -108,10 +108,12 @@
         </div>
       </div>
     </section>
+   
   </div>
 </template>
 
 <script setup>
+import TerminalExperience from '~/components/TerminalExperience.vue'
 const featuredProjects = [
   {
     title: 'Calculateur dynamique d\'âge',
@@ -122,7 +124,13 @@ const featuredProjects = [
     title: 'Générateur de Code QR',
     description: 'Un modèle de génération d\'un code QR unique basé sur du texte entré par l\'utilisateur personnalisable pour les professionnels créatifs et les agences.',
     image: 'assets/salut.png'
-  }
+  },
+  {
+    title: "Modèle de Portfolio",
+    description:
+      "Un modèle de portfolio pour la présentation des compétences et atouts du dévéloppeur.",
+    image: "assets/image.png"
+  },
 ]
 
 // Add GSAP animation when component is mounted

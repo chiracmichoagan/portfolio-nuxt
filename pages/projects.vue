@@ -125,7 +125,7 @@ const projects = [
       "Une application qui vous offre des exercices de concentration, de détente , compte tenu de l'humeur de l'utilisateur . Affichage dynamique d'un graphique d'évolution de l'humeur",
     image: "assets/arthelays-mental.png",
     technologies: ["React JS", "Node JS", "MongoDB", "i18n"],
-    demo: "",
+    demo: "/",
     github: "https://github.com/moufidagbannonde/Mental-Survivor",
   },
   {
@@ -133,10 +133,10 @@ const projects = [
     description:
       "Une  application web qui utilise l'API Gemini pour permettre aux utilisateurs de discuter avec un chatbot.",
     image:
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&format&fit=crop&w=1470&q=80",
+      "assets/gemini-chat.png",
     technologies: ["Vue.js", "API Integration", "Tailwind CSS"],
-    demo: "https://example.com/recipes",
-    github: "https://github.com/yourusername/recipes",
+    demo: "/",
+    github: "https://github.com/moufidagbannonde/Gemini-Chat",
   },
   // {
   //   title: "Plateforme de Blog",
