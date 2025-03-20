@@ -31,14 +31,15 @@
       </div>
 
       <!-- Corps du chat -->
-      <div class="chat-body bg-gray-50 dark:bg-gray-900 h-80 overflow-y-auto p-4" ref="chatBody">
-        <div v-for="(message, index) in messages" :key="index" class="mb-4">
+        <!-- Corps du chat -->
+        <div class="chat-body bg-gray-50 dark:bg-gray-900 h-80 overflow-y-auto p-4" ref="chatBody">
+        <div v-for="(message, index) in messages" :key="index" class="mb-4 flex" :class="message.isBot ? 'justify-start' : 'justify-end'">
           <div 
             :class="[
-              'max-w-3/4 rounded-lg p-3 break-words', 
+              'max-w-[75%] rounded-lg p-3 break-words', 
               message.isBot 
-                ? 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 mr-auto' 
-                : 'bg-primary-500 text-white ml-auto'
+                ? 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200' 
+                : 'bg-primary-500 text-white'
             ]"
           >
             {{ message.text }}
