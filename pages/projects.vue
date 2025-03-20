@@ -3,9 +3,9 @@
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl font-bold mb-4 fade-in">Mes Projets</h1>
+          <h1 class="text-3xl font-bold mb-4 fade-in text-primary">Mes Projets</h1>
           <p
-            class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
+            class="text-lg text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
           >
             Une collection de mes travaux récents et projets personnels
           </p>
@@ -113,7 +113,7 @@ const projects = [
   },
   {
     title: "Connectly",
-    description: "Une application de blogs",
+    description: "Une application de lecture de blogs regroupés selon les catégories ainsi que les descriptions de chacun d'eux",
     image: "assets/connectly.png",
     technologies: ["NuxtJS", "NuxtUI", "Firebase"],
     demo: "/projects",
@@ -122,7 +122,7 @@ const projects = [
   {
     title: "Application de suivi mental",
     description:
-      "Une application qui vous offre des exercices de concentration, de détente , compte tenu de l'humeur de l'utilisateur . Affichage dynamique d'un graphique d'évolution de l'humeur",
+      "Une application qui vous offre des exercices de concentration et de détente , ainsi que le suivi dynamique d'un graphique marquant l'évolution de votre humeur",
     image: "assets/arthelays-mental.png",
     technologies: ["React JS", "Node JS", "MongoDB", "i18n"],
     demo: "/projects",
@@ -134,20 +134,20 @@ const projects = [
       "Une  application web qui utilise l'API Gemini pour permettre aux utilisateurs de discuter avec un chatbot.",
     image:
       "assets/gemini-chat.png",
-    technologies: ["Vue.js", "API Integration", "Tailwind CSS"],
+    technologies: ["Vue.js", "API Integration", "Node JS"],
     demo: "/projects",
     github: "https://github.com/moufidagbannonde/Gemini-Chat",
   },
-  // {
-  //   title: "Plateforme de Blog",
-  //   description:
-  //     "Un système de gestion de contenu pour créer et gérer des articles de blog avec authentification utilisateur.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&format&fit=crop&w=1470&q=80",
-  //   technologies: ["Node.js", "Express", "MongoDB", "EJS"],
-  //   demo: "https://example.com/blog",
-  //   github: "https://github.com/yourusername/blog",
-  // },
+  {
+    title: "Anime Quiz",
+    description:
+      "Une  application web qui permet le passage de quiz sur les questions ayant rapport avec les animés et réalisations animatographiques.",
+    image:
+      "assets/ukyosaionji.jpg",
+    technologies: ["Angular", "Node JS", "MongoDB"],
+    demo: "/projects",
+    github: "https://github.com/moufidagbannonde/Gemini-Chat",
+  }
 ];
 
 const filteredProjects = computed(() => {

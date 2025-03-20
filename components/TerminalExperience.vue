@@ -7,7 +7,7 @@
         <div class="w-3 h-3 rounded-full bg-green-500"></div>
       </div>
       <div class="text-xs">
-        {{ hackerMode ? 'hacker@secure-shell' : 'terminal@portfolio' }}
+        {{ hackerMode ? 'hacker@secure-shell' : 'terminal@txr-portfolio' }}
         <span v-if="hackerMode" class="blink ml-1">_</span>
       </div>
     </div>
@@ -45,16 +45,21 @@
 
 <script setup>
 import { ref, onMounted, nextTick, watch } from 'vue'
-
-const currentCommand = ref('')
+// commande actuelle
+const currentCommand = ref('');
+// commandes de lignes
 const outputLines = ref([
   { type: 'response', content: 'Bienvenue dans le terminal interactif de mon portfolio!' },
   { type: 'response', content: 'Tapez <span class="text-yellow-400">help</span> pour voir les commandes disponibles.' }
 ])
-const outputContainer = ref(null)
-const hackerMode = ref(false)
+// sortie de commande
+const outputContainer = ref(null);
+// mode hacker
+const hackerMode = ref(false);
+// effet matrix
 const matrixEffect = ref(false)
 
+// différentes commandes (mode hacker et non hacker)
 const commands = {
   help: () => {
     if (hackerMode.value) {
@@ -78,6 +83,7 @@ const commands = {
       <br>- <span class="text-green-400">clear</span>: Effacer le terminal
     `
   },
+  // A propos de moi
   about: () => {
     if (hackerMode.value) {
       return `
@@ -91,9 +97,10 @@ const commands = {
       <span class="text-yellow-400">À propos de moi:</span>
       <br>Développeur web passionné avec près d'un an d'expérience.
       <br>Spécialisé en développement backend avec Node.js et SpringBoot.
-      <br>Intéressé par la cybersécurité et l'apprentissage continu.
+      <br>Intéressé par la cybersécurité et l'apprentissage continu de technologies innovantes.
     `
   },
+  // Compétences
   skills: () => {
     if (hackerMode.value) {
       return `
@@ -117,8 +124,10 @@ const commands = {
       <br>- Git: 25%
       <br>- GitHub: 60%
       <br>- Hacking: 35%
+      <br>- Angular: 40%
     `
   },
+  // Projets
   projects: () => {
     if (hackerMode.value) {
       return `
@@ -132,32 +141,37 @@ const commands = {
       <span class="text-yellow-400">Mes projets:</span>
       <br>- <span class="text-green-400">Asclépios App</span>: Application de gestion de dossier médical
       <br>- <span class="text-green-400">Catarina</span>: Projet de gestion de fiches pour centre d'appels
-      <br>
-      <br>Tapez <span class="text-green-400">project [nom]</span> pour plus de détails
-    `
+      <br>- <span class="text-green-400">Moufid AI Chat</span>: Application de discussion en temps réel avec un chatbot intégré avec l'API de Gemini
+      <br>- <span class="text-green-400">Anime Quiz</span>: Application de discussion en temps réel avec un chatbot intégré avec l'API de Gemini
+       `
   },
+  // Contact
   contact: () => {
     if (hackerMode.value) {
       return `
         <span class="text-red-400">CANAUX SÉCURISÉS:</span>
         <br>- Signal: <span class="text-green-500">+encrypted</span>
         <br>- ProtonMail: <span class="text-green-500">secure@protonmail.com</span>
-        <br>- GitHub: <span class="text-green-500">github.com/yourusername</span> (GPG: 0xF1D2E3A4B5C6)
+        <br>- GitHub: <span class="text-green-500">github.com/moufidagbannonde</span> (GPG: 0xF1D2E3A4B5C6)
       `
     }
     return `
       <span class="text-yellow-400">Contact:</span>
-      <br>- Email: your.email@example.com
-      <br>- Téléphone: +1 (234) 567-890
-      <br>- Localisation: Paris, France
-      <br>- GitHub: github.com/yourusername
-      <br>- LinkedIn: linkedin.com/in/yourusername
+      <br>- Email: moufidteixeira@gmail.com
+      <br>- Téléphone: +229 (019) 558-8789
+      <br>- Localisation: Praia, Cabo Verde
+      <br>- GitHub: github.com/moufidagbannonde
+      <br>- LinkedIn: linkedin.com/in/moufidagbannonde
+      <br>- Twitter: x.com/@teixeira00125
     `
   },
+  // effacer le contenu du terminal
   clear: () => {
     outputLines.value = []
     return ''
   },
+
+  // mode hacker 
   hacker: () => {
     hackerMode.value = true
     return `
@@ -166,6 +180,7 @@ const commands = {
       <br>Tapez <span class="text-green-500">help</span> pour voir les commandes disponibles.
     `
   },
+  // mode normal
   normal: () => {
     if (hackerMode.value) {
       hackerMode.value = false
@@ -174,9 +189,9 @@ const commands = {
     }
     return `Vous êtes déjà en mode normal.`
   },
+  // simulation d'un scannage du réseau (données factices, pas en temps réel)
   scan: () => {
     if (!hackerMode.value) return `Commande disponible uniquement en mode hacker.`
-    
     return simulateHackerCommand('Scan du réseau en cours...', [
       'Découverte des hôtes: 192.168.1.1/24',
       'Ports ouverts: 22 (SSH), 80 (HTTP), 443 (HTTPS)',
@@ -184,6 +199,7 @@ const commands = {
       'Scan terminé. Aucune vulnérabilité critique détectée.'
     ])
   },
+  // simulation de décryptage d'algorithme
   decrypt: () => {
     if (!hackerMode.value) return `Commande disponible uniquement en mode hacker.`
     
@@ -194,6 +210,7 @@ const commands = {
       'Décryptage réussi! Données accessibles.'
     ])
   },
+  // simulation d'exploitation
   exploit: () => {
     if (!hackerMode.value) return `Commande disponible uniquement en mode hacker.`
     
@@ -205,6 +222,7 @@ const commands = {
       'Accès obtenu! Shell distant disponible.'
     ])
   },
+  // effet matrix
   matrix: () => {
     if (!hackerMode.value) return `Commande disponible uniquement en mode hacker.`
     
@@ -215,8 +233,9 @@ const commands = {
   }
 }
 
+// simulation de commande avec affichage lent des différents messages
 function simulateHackerCommand(initialMessage, steps) {
-  // Ajouter un délai pour simuler le traitement
+  // délai de traitement
   setTimeout(() => {
     let delay = 500
     steps.forEach((step, index) => {
@@ -226,7 +245,7 @@ function simulateHackerCommand(initialMessage, steps) {
           content: `<span class="text-green-500">[${index + 1}/${steps.length}]</span> ${step}` 
         })
         
-        // Faire défiler vers le bas
+        //  défiler vers le bas
         if (outputContainer.value) {
           outputContainer.value.scrollTop = outputContainer.value.scrollHeight
         }
@@ -238,20 +257,21 @@ function simulateHackerCommand(initialMessage, steps) {
   return initialMessage
 }
 
+// exécuter la commande
 const executeCommand = () => {
   if (!currentCommand.value.trim()) return
   
-  // Ajouter la commande à l'historique
+  // ajout de la commande à l'historique
   outputLines.value.push({ 
     type: 'command', 
     content: currentCommand.value,
     isMatrix: hackerMode.value && matrixEffect.value
   })
   
-  // Traiter la commande
+  // traitement de la commande
   const args = currentCommand.value.trim().split(' ')
   const cmd = args[0].toLowerCase()
-  
+  // vérification de l'entrée de l'utilisateur pour correspondre aux commandes pré-définies
   if (commands[cmd]) {
     const response = commands[cmd](args.slice(1))
     if (response) {
@@ -266,10 +286,10 @@ const executeCommand = () => {
     })
   }
   
-  // Réinitialiser la commande
+  // réinitialisation de la commande
   currentCommand.value = ''
   
-  // Faire défiler vers le bas
+  //  défiler vers le bas
   nextTick(() => {
     if (outputContainer.value) {
       outputContainer.value.scrollTop = outputContainer.value.scrollHeight
@@ -277,7 +297,7 @@ const executeCommand = () => {
   })
 }
 
-// Créer l'effet Matrix quand le mode est activé
+// surveille l'activation de l'effet Matrix 
 watch(matrixEffect, (newValue) => {
   if (newValue && process.client) {
     nextTick(() => {
@@ -286,6 +306,7 @@ watch(matrixEffect, (newValue) => {
   }
 })
 
+// création de l'effet matrix
 function createMatrixEffect() {
   if (!process.client || !matrixEffect.value) return
   
@@ -318,6 +339,7 @@ function createMatrixEffect() {
     drops[i] = 1
   }
   
+  // faire un dessin avec des caractères prédéfinis pour un effet matrix
   function draw() {
     if (!matrixEffect.value) {
       if (container.contains(canvas)) {
@@ -342,7 +364,7 @@ function createMatrixEffect() {
       
       drops[i]++
     }
-    
+    // animer le dessin
     requestAnimationFrame(draw)
   }
   
@@ -350,7 +372,7 @@ function createMatrixEffect() {
 }
 
 onMounted(() => {
-  // Focus sur l'input au chargement
+  // focus sur l'input au chargement du composant
   if (process.client) {
     nextTick(() => {
       const input = document.querySelector('.terminal-input input')
