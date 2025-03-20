@@ -75,7 +75,7 @@
             >
               <UIcon name="i-heroicons-command-line" class="text-xl" />
             </button>
-            <LanguageSelector />
+            <!-- <LanguageSelector /> -->
           </div>
         </div>
       </header>
