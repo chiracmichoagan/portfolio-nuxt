@@ -3,7 +3,9 @@
     <div
       class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors flex flex-col"
     >
-      <header class="p-4 bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+      <header
+        class="p-4 bg-white dark:bg-gray-800 shadow-2xl sticky top-0 z-50"
+      >
         <div class="container mx-auto flex justify-between items-center">
           <NuxtLink
             to="/"
@@ -11,10 +13,9 @@
           >
             <!-- drapeau Cap-Vert -->
             <img
-              src="./public/assets/caboverde.png"
-              class="w-6 h-6 rounded-full"
+              src="./public/assets/image_dona.png"
+              class="w-10 h-10 rounded-full "
             />
-            Txr Portfolio
           </NuxtLink>
 
           <!-- Navigation  -->
@@ -25,8 +26,8 @@
                 v-for="item in navItems"
                 :key="item.to"
                 :to="item.to"
-                class="hover:text-primary-500 transition-colors flex items-center gap-2"
-                active-class="text-primary-500 font-semibold"
+                class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold"
               >
                 {{ item.label }}
               </NuxtLink>
@@ -45,8 +46,8 @@
                 v-for="item in navItems"
                 :key="item.to"
                 :to="item.to"
-                class="hover:text-primary-500 transition-colors flex items-center gap-2"
-                active-class="text-primary-500 font-semibold"
+                class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold"
                 @click="closeMenu"
               >
                 <UIcon v-if="item.icon" :name="item.icon" class="text-lg" />
@@ -76,6 +77,48 @@
               <UIcon name="i-heroicons-command-line" class="text-xl" />
             </button>
             <!-- <LanguageSelector /> -->
+            <div class="relative inline-block text-left">
+              <div class="group">
+                <button
+                  type="button"
+                  class="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                >
+                choissisez votre langue
+                  <!-- Dropdown arrow -->
+                  <svg
+                    class="w-4 h-4 ml-2 -mr-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                  </svg>
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                  class="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300"
+                >
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 flex text-sm text-gray-700 hover:bg-gray-100"
+                      ><img src="/assets/flags/fr.svg" alt="logo_de_la_langue_fr" class="w-10 h-10 rounded-sm"><span class="flex gap-2 mt-1 p-1">Français</span></a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm flex text-gray-700 hover:bg-gray-100"
+                      ><img src="/assets/flags/en.svg" alt="logo_lang_englais" class="w-9 h-9 rounded-sm"><span class="flex gap-2 mt-1 p-1">English</span></a
+                    >
+                    <!-- <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >Option 3</a
+                    > -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -92,7 +135,7 @@
             <!-- Section Présentation -->
             <div class="text-center md:text-left">
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                Txr Portfolio
+                DONA Portfolio
               </h3>
               <p
                 class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0"
@@ -114,7 +157,7 @@
                   v-for="item in navItems"
                   :key="item.to"
                   :to="item.to"
-                  class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+                  class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                 >
                   {{ item.label }}
                 </NuxtLink>
@@ -130,18 +173,18 @@
               </h4>
               <div class="flex justify-center space-x-4 md:justify-start">
                 <a
-                  href="https://github.com/moufidagbannonde"
+                  href="https://github.com/chiracmichoagan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                 >
                   <UIcon name="i-simple-icons-github" class="text-2xl" />
                 </a>
                 <a
-                  href="https://linkedin.com/moufidagbannonde"
+                  href="https://linkedin.com/chiracmichoagan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                 >
                   <UIcon name="i-simple-icons-linkedin" class="text-2xl" />
                 </a>
@@ -149,7 +192,7 @@
                   href="https://x.com/@teixeira00125"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-primary-500 transition-colors"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
                 >
                   <UIcon name="i-simple-icons-twitter" class="text-2xl" />
                 </a>
@@ -162,11 +205,11 @@
             class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400"
           >
             <p class="flex items-center justify-center gap-3">
-              &copy; {{ new Date().getFullYear() }} Txr Portfolio. Tous droits
+              &copy; {{ new Date().getFullYear() }} DONA Portfolio. Tous droits
               réservés.
               <!-- drapeau Cap-Vert -->
               <img
-                src="./public/assets/caboverde.png"
+                src="./public/assets/image_dona.png"
                 class="w-6 h-6 rounded-full"
               />
             </p>
@@ -185,7 +228,7 @@
             <h3 class="text-white font-semibold">Terminal Interactif</h3>
             <button
               @click="toggleTerminal"
-              class="text-white hover:text-primary-500"
+              class="text-white hover:text-blue-600"
             >
               <UIcon name="i-heroicons-x-mark" class="text-xl" />
             </button>
@@ -193,7 +236,7 @@
           <TerminalExperience v-if="showTerminal" class="h-[calc(100%-2rem)]" />
         </div>
       </div>
-      
+
       <!-- Chat Bot Assistant -->
       <ChatBot />
     </div>
@@ -211,8 +254,9 @@ const isMenuOpen = ref(false);
 const navItems = [
   { label: "Accueil", to: "/" },
   { label: "À propos", to: "/about" },
-  { label: "Projets", to: "/projects"},
-  { label: "Contact", to: "/contact"},
+  { label: "Projets", to: "/projects" },
+  { label: "Contact", to: "/contact" },
+  // { label: "Blog", to: "/blog" },
 ];
 
 const toggleDarkMode = () => {

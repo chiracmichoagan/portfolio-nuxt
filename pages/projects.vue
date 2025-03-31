@@ -7,7 +7,7 @@
           <p
             class="text-lg text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
           >
-            Une collection de mes travaux récents et projets personnels
+            Une collection de mes travaux  et projets personnels
           </p>
         </div>
       </div>
@@ -65,7 +65,7 @@
                       v-if="project.demo"
                       :to="project.demo"
                       target="_blank"
-                      color="primary"
+                      color="blue"
                     >
                       Démo
                     </UButton>
@@ -94,60 +94,14 @@ const search = ref("");
 
 const projects = [
   {
-    title: "Calculateur dynamique d'âge",
+    title: "Calculatrice scientifique demo",
     description:
-      "Une plateforme complète calculant dynamiquement l'âge compte tenu de la date de naissance avec une interface attrayante.",
-    image: "assets/desktop-preview.jpg",
+      "Une plateforme (demo) de calculatrice scientifique qui permet de réaliser des opérations mathématiques de base.",
+    image: "assets/my_calculator.png",
     technologies: ["HTML", "CSS", "JavaScript"],
-    demo: "https://age-calculator-txt.netlify.app/",
-    github: "https://github.com/moufidagbannonde/age-calculator-app",
+    demo: "https://mycalculator-beta.vercel.app/",
+    github: "https://github.com/chiracmichoagan/mycalculator",
   },
-  {
-    title: "Modèle de Portfolio",
-    description:
-      "Un modèle de portfolio pour la présentation des compétences et atouts du dévéloppeur.",
-    image: "assets/image.png",
-    technologies: ["NuxtJS", "TypeScript", "TailwindCSS", "GSAP"],
-    demo: "/projects",
-    github: "https://github.com/moufidagbannonde/portfolio-nuxt",
-  },
-  {
-    title: "Connectly",
-    description: "Une application de lecture de blogs regroupés selon les catégories ainsi que les descriptions de chacun d'eux",
-    image: "assets/connectly.png",
-    technologies: ["NuxtJS", "NuxtUI", "Firebase"],
-    demo: "/projects",
-    github: "https://github.com/moufidagbannonde/connectly",
-  },
-  {
-    title: "Application de suivi mental",
-    description:
-      "Une application qui vous offre des exercices de concentration et de détente , ainsi que le suivi dynamique d'un graphique marquant l'évolution de votre humeur",
-    image: "assets/arthelays-mental.png",
-    technologies: ["React JS", "Node JS", "MongoDB", "i18n"],
-    demo: "/projects",
-    github: "https://github.com/moufidagbannonde/Mental-Survivor",
-  },
-  {
-    title: "Moufid AI Chat",
-    description:
-      "Une  application web qui utilise l'API Gemini pour permettre aux utilisateurs de discuter avec un chatbot.",
-    image:
-      "assets/gemini-chat.png",
-    technologies: ["Vue.js", "API Integration", "Node JS"],
-    demo: "/projects",
-    github: "https://github.com/moufidagbannonde/Gemini-Chat",
-  },
-  {
-    title: "Anime Quiz",
-    description:
-      "Une  application web qui permet le passage de quiz sur les questions ayant rapport avec les animés et réalisations animatographiques.",
-    image:
-      "assets/ukyosaionji.jpg",
-    technologies: ["Angular", "Node JS", "MongoDB"],
-    demo: "/projects",
-    github: "https://github.com/moufidagbannonde/Gemini-Chat",
-  }
 ];
 
 const filteredProjects = computed(() => {

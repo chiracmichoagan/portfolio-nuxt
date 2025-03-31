@@ -3,21 +3,21 @@
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl font-bold mb-6 fade-in">Bonjour, je suis <span class="text-primary-500">Moufid Txr</span></h1>
+          <h1 class="text-5xl font-bold mb-6 fade-in">Bonjour, je suis <span class="text-primary-500">Dona Chirac MICHOAGAN</span></h1>
           <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100">
-            Développeur web passionné par l'optimisation des performances et la création d'interfaces utilisateur intuitives, disponible pour contribuer à des projets innovants dans un environnement collaboratif.
+            Développeur web full-stack passionné par l'optimisation des performances et la création d'interfaces utilisateur intuitives, disponible pour contribuer à des projets innovants dans un environnement collaboratif.
           </p>
           <div class="flex justify-center space-x-4 fade-in delay-200">
             <UButton
               to="/projects"
-              color="primary"
+              color="blue"
               size="lg"
             >
-              Voir mes projets
+              Voir mes projets ->
             </UButton>
             <UButton
               to="/contact"
-              color="gray"
+              color="primary"
               variant="outline"
               size="lg"
             >
@@ -100,7 +100,7 @@
           <div class="mt-8 fade-in delay-300">
             <UButton
               to="/projects"
-              color="primary"
+              color="blue"
             >
               Voir tous les projets
             </UButton>
@@ -116,20 +116,9 @@
 import TerminalExperience from '~/components/TerminalExperience.vue'
 const featuredProjects = [
   {
-    title: 'Calculateur dynamique d\'âge',
-    description: 'Une plateforme complète calculant dynamiquement l\'âge compte tenu de la date de naissance avec une interface attrayante.',
-    image: 'assets/desktop-preview.jpg'
-  },
-  {
-    title: 'Générateur de Code QR',
-    description: 'Un modèle de génération d\'un code QR unique basé sur du texte entré par l\'utilisateur personnalisable pour les professionnels créatifs et les agences.',
-    image: 'assets/salut.png'
-  },
-  {
-    title: "Modèle de Portfolio",
-    description:
-      "Un modèle de portfolio pour la présentation des compétences et atouts du dévéloppeur.",
-    image: "assets/image.png"
+    title: 'Calculatrice scientifique demo',
+    description: 'Une plateforme (demo) de calculatrice scientifique qui permet de réaliser des opérations mathématiques de base.',
+    image: 'assets/my_calculator.png'
   },
 ]
 

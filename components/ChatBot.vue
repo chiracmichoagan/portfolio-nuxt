@@ -21,7 +21,7 @@
           <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
             <span class="text-primary-500 font-bold">T</span>
           </div>
-          <h3 class="font-semibold">Assistant Txr</h3>
+          <h3 class="font-semibold">Assistant Dona</h3>
         </div>
         <div class="flex space-x-2">
           <button @click="clearChat" class="hover:text-gray-200 transition-colors">
@@ -86,16 +86,16 @@ const isTyping = ref(false);
 const chatBody = ref(null);
 
 // Messages de bienvenue et réponses prédéfinies
-const welcomeMessage = "Bonjour ! Je suis l'assistant virtuel de Teixeira. Comment puis-je vous aider aujourd'hui ?";
+const welcomeMessage = "Bonjour ! Je suis l'assistant virtuel de Dona. Comment puis-je vous aider aujourd'hui ?";
 const responses = {
   'bonjour': "Bonjour ! Comment puis-je vous aider ?",
   'salut': "Salut ! Comment puis-je vous aider ?",
-  'projet': "Teixeira a travaillé sur plusieurs projets passionnants. Vous pouvez les consulter dans la section Projets du portfolio.",
-  'contact': "Vous pouvez contacter Teixeira via le formulaire de contact ou directement par email à contact@txrportfolio.com",
-  'compétences': "Teixeira est spécialisé en développement web full stack, avec une expertise en JavaScript, Vue.js, Node.js et bien d'autres technologies.",
-  'expérience': "Teixeira a plusieurs années d'expérience en développement web. Consultez la section À propos pour en savoir plus sur son parcours.",
-  'cv': "Vous pouvez télécharger le CV de Teixeira depuis la section À propos.",
-  'disponibilité': "Teixeira est actuellement disponible pour de nouveaux projets. N'hésitez pas à le contacter pour discuter de vos besoins.",
+  'projet': "Dona a travaillé sur plusieurs projets passionnants. Vous pouvez les consulter dans la section Projets du portfolio.",
+  'contact': "Vous pouvez contacter Dona via le formulaire de contact ou directement par email à contact@txrportfolio.com",
+  'compétences': "Dona est spécialisé en développement web full stack, avec une expertise en JavaScript, Vue.js, Node.js et bien d'autres technologies.",
+  'expérience': "Dona a plusieurs années d'expérience en développement web. Consultez la section À propos pour en savoir plus sur son parcours.",
+  'cv': "Vous pouvez télécharger le CV de Dona depuis la section À propos.",
+  'disponibilité': "Dona est actuellement disponible pour de nouveaux projets. N'hésitez pas à le contacter pour discuter de vos besoins.",
   'merci': "Je vous en prie ! N'hésitez pas si vous avez d'autres questions.",
   'au revoir': "Au revoir ! N'hésitez pas à revenir si vous avez d'autres questions.",
 };
@@ -136,7 +136,7 @@ const sendMessage = async () => {
     isTyping.value = false;
     
     // Trouver une réponse appropriée
-    let botResponse = "Je ne suis pas sûr de comprendre. Pouvez-vous reformuler ou poser une question sur les projets, compétences ou comment contacter Teixeira ?";
+    let botResponse = "Je ne suis pas sûr de comprendre. Pouvez-vous reformuler ou poser une question sur les projets, compétences ou comment contacter Dona ?";
     
     // Vérifier si le message contient des mots-clés
     for (const [keyword, response] of Object.entries(responses)) {

@@ -35,8 +35,8 @@
                       />
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Email</div>
-                        <a href="mailto:moufidteixeira@gmail.com" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
-                          moufidteixeira@gmail.com
+                        <a href="mailto:michoaganchiracdona@gmail.com" class="text-gray-800 text-xs dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
+                         michoaganchiracdona@gmail.com
                         </a>
                       </div>
                     </div>
@@ -52,7 +52,7 @@
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Téléphone</div>
                         <a href="tel:+1234567890" class="text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 font-medium">
-                          +229 (019) 558-8789
+                          +229 (015) 3947916 ou +229 (016) 1299161
                         </a>
                       </div>
                     </div>
@@ -68,7 +68,7 @@
                       <div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">Localisation</div>
                         <span class="text-gray-800 dark:text-gray-200 font-medium">
-                          Cotonou, Bénin
+                          Cotonou-littoral, Bénin
                         </span>
                       </div>
                     </div>
@@ -78,46 +78,67 @@
                     <div>
                       <h3 class="text-lg font-semibold mb-4">Retrouvez-moi sur les réseaux</h3>
                       <div class="flex space-x-3">
-                        <UTooltip text="GitHub">
+                        <UTooltip text="Twitter">
                           <UButton
                             color="primary"
                             variant="ghost"
+                            to="https://x.com/chinoisnois"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                          <img src="public/assets/x.png" alt="Logo X de Twitter" class="h-4 mt-2 w-5" />
+                        </UTooltip>
+                        <UTooltip text="GitHub">
+                          <UButton
+                            color="black"
+                            variant="ghost"
                             icon="i-simple-icons-github"
-                            to="https://github.com/moufidagbannonde"
+                            to="https://github.com/chiracmichoagan"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
                         </UTooltip>
                         <UTooltip text="LinkedIn">
                           <UButton
-                            color="primary"
+                            color="blue"
                             variant="ghost"
                             icon="i-simple-icons-linkedin"
-                            to="https://linkedin.com/in/moufidagbannonde"
+                            to="https://linkedin.com/in/chiracmichoagan"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
                         </UTooltip>
-                        <UTooltip text="Twitter">
+                       
+                        <UTooltip text="Instagram">
                           <UButton
-                            color="primary"
-                            variant="ghost"
-                            icon="i-simple-icons-twitter"
-                            to="https://x.com/@teixeira00125"
-                            target="_blank"
-                            class="hover:scale-110 transition-transform"
-                          />
-                        </UTooltip>
-                        <!-- <UTooltip text="Instagram">
-                          <UButton
-                            color="primary"
+                            color="red"
                             variant="ghost"
                             icon="i-simple-icons-instagram"
                             to="https://instagram.com/yourusername"
                             target="_blank"
                             class="hover:scale-110 transition-transform"
                           />
-                        </UTooltip> -->
+                        </UTooltip>
+                        <UTooltip text="facebook">
+                          <UButton
+                            color="blue"
+                            variant="ghost"
+                            icon="i-simple-icons-facebook"
+                            to="https://instagram.com/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
+                        <UTooltip text="TikTok">
+                          <UButton
+                            color="black"
+                            variant="ghost"
+                            icon="i-simple-icons-tiktok"
+                            to="https://instagram.com/yourusername"
+                            target="_blank"
+                            class="hover:scale-110 transition-transform"
+                          />
+                        </UTooltip>
                       </div>
                     </div>
                   </template>
