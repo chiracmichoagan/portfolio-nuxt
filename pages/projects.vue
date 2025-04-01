@@ -17,15 +17,40 @@
 
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-8 fade-in delay-200">
-            <UInput
-              v-model="search"
-              icon="i-heroicons-magnifying-glass"
-              placeholder="Rechercher des projets..."
-            />
+        <div class="mt-8 sm:mt-10">
+          <h3
+            class="font-general-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4"
+          >
+            Rechercher des projets par titre ou filtrer par catégorie
+          </h3>
+          <div
+            class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2"
+          >
+            <div class="flex justify-between gap-2">
+              <span
+                class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
+              >
+                <UIcon
+                  name="i-heroicons-magnifying-glass"
+                  data-feather="search"
+                  class="text-ternary-dark dark:text-ternary-light"
+                /> </span
+              ><input
+                v-model="search"
+                class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+                id="name"
+                name="name"
+                type="search"
+                required
+                placeholder="Rechercher des projets..."
+                aria-label="Name"
+              />
+            </div>
+            <ProjectsFilter @change="selectedProject = $event" />
           </div>
+        </div>
 
+        <div class="max-w-6xl mx-auto mt-8">
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div
               v-for="(project, index) in filteredProjects"
@@ -62,6 +87,14 @@
                       {{ tech }}
                     </UBadge>
                   </div>
+                  <span
+              class="
+                font-general-medium
+                text-lg text-ternary-dark
+                dark:text-ternary-light
+              "
+              >{{ project.category }}</span
+            >
                 </div>
                 <template #footer>
                   <div class="flex justify-between">
@@ -94,7 +127,10 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from "vue";
+
 const search = ref("");
+const selectedProject = ref("");
 
 const projects = [
   {
@@ -106,9 +142,32 @@ const projects = [
     demo: "https://mycalculator-beta.vercel.app/",
     github: "https://github.com/chiracmichoagan/mycalculator",
   },
+  {
+    title: "flamework CRUD app-vuejs (demo)",
+    description:
+      "Une plateforme (demo) de gestion de tâches (CRUD) qui permet de créer, lire, mettre à jour et supprimer des tâches.",
+    image: "assets/flamework-vue.png",
+    technologies: [
+      "HTML",
+      "tailwinds css",
+      "vuesjs",
+      "JavaScript (TypeScript) websocket",
+    ],
+    demo: "https://my-vue-crud-framework.vercel.app/",
+    github: "https://github.com/chiracmichoagan/my-vue-crud-framework.git",
+  },
 ];
 
 const filteredProjects = computed(() => {
+  if (!selectedProject.value) return filterProjectsBySearch.value;
+  return filterProjectsBySearch.value.filter((item) => {
+    const category =
+      item.category?.charAt(0).toUpperCase() + item.category?.slice(1);
+    return category.includes(selectedProject.value);
+  });
+});
+
+const filterProjectsBySearch = computed(() => {
   if (!search.value) return projects;
 
   const searchTerm = search.value.toLowerCase();
@@ -120,6 +179,15 @@ const filteredProjects = computed(() => {
         tech.toLowerCase().includes(searchTerm)
       )
     );
+  });
+});
+
+const filteredProjectsByCategory = computed(() => {
+  if (!selectedProject.value) return projects;
+  return projects.filter((item) => {
+    const category =
+      item.category?.charAt(0).toUpperCase() + item.category?.slice(1);
+    return category.includes(selectedProject.value);
   });
 });
 
@@ -160,19 +228,16 @@ onMounted(() => {
   transform: translateY(-5px);
 }
 
-/* Smooth transition for all interactive elements */
 .fade-in,
 .UButton,
 .UBadge {
   transition: all 0.3s ease-in-out;
 }
 
-/* Smooth image zoom effect */
 .overflow-hidden {
   overflow: hidden;
 }
 
-/* Search input animation */
 .UInput {
   transition: all 0.3s ease;
 }
@@ -181,12 +246,10 @@ onMounted(() => {
   transform: scale(1.02);
 }
 
-/* Badge hover effect */
 .UBadge:hover {
   transform: scale(1.1);
 }
 
-/* Button hover animation */
 .UButton {
   position: relative;
   overflow: hidden;
