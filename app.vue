@@ -14,7 +14,7 @@
             <!-- drapeau Cap-Vert -->
             <img
               src="./public/assets/image_dona.png"
-              class="w-10 h-10 rounded-full "
+              class="w-10 h-10 rounded-full"
             />
           </NuxtLink>
 
@@ -83,7 +83,7 @@
                   type="button"
                   class="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
-                choissisez votre langue
+                  choissisez votre langue
                   <!-- Dropdown arrow -->
                   <svg
                     class="w-4 h-4 ml-2 -mr-1"
@@ -103,12 +103,20 @@
                     <a
                       href="#"
                       class="block px-4 py-2 flex text-sm text-gray-700 hover:bg-gray-100"
-                      ><img src="/assets/flags/fr.svg" alt="logo_de_la_langue_fr" class="w-10 h-10 rounded-sm"><span class="flex gap-2 mt-1 p-1">Français</span></a
+                      ><img
+                        src="/assets/flags/fr.svg"
+                        alt="logo_de_la_langue_fr"
+                        class="w-10 h-10 rounded-sm"
+                      /><span class="flex gap-2 mt-1 p-1">Français</span></a
                     >
                     <a
                       href="#"
                       class="block px-4 py-2 text-sm flex text-gray-700 hover:bg-gray-100"
-                      ><img src="/assets/flags/en.svg" alt="logo_lang_englais" class="w-9 h-9 rounded-sm"><span class="flex gap-2 mt-1 p-1">English</span></a
+                      ><img
+                        src="/assets/flags/en.svg"
+                        alt="logo_lang_englais"
+                        class="w-9 h-9 rounded-sm"
+                      /><span class="flex gap-2 mt-1 p-1">English</span></a
                     >
                     <!-- <a
                       href="#"

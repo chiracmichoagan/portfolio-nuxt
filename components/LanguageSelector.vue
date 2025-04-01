@@ -25,28 +25,30 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-const { locale } = useI18n()
+import { computed } from "vue";
+const { locale } = useI18n();
 
-const currentLocale = computed(() => locale.value)
+const currentLocale = computed(() => locale.value);
 
 const languages = [
-  { name: 'Français', code: 'fr', flag: '🇫🇷' },
-  { name: 'English', code: 'en', flag: '🇬🇧' },
-  { name: 'Italiano', code: 'it', flag: '🇮🇹' },
-  { name: 'Português', code: 'pt', flag: '🇵🇹' },
-  { name: 'Ελληνικά', code: 'el', flag: '🇬🇷' }
-]
+  { name: "Français", code: "fr", flag: "🇫🇷" },
+  { name: "English", code: "en", flag: "🇬🇧" },
+  { name: "Italiano", code: "it", flag: "🇮🇹" },
+  { name: "Português", code: "pt", flag: "🇵🇹" },
+  { name: "Ελληνικά", code: "el", flag: "🇬🇷" },
+];
 
 const currentLanguage = computed(() => {
-  return languages.find(lang => lang.code === currentLocale.value) || languages[0]
-})
+  return (
+    languages.find((lang) => lang.code === currentLocale.value) || languages[0]
+  );
+});
 
 const getCurrentFlag = computed(() => {
-  return currentLanguage.value.flag
-})
+  return currentLanguage.value.flag;
+});
 
 const switchLanguage = (code) => {
-  locale.value = code
-}
+  locale.value = code;
+};
 </script>

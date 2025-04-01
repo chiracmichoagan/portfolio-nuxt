@@ -3,11 +3,13 @@
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-3xl font-bold mb-4 fade-in text-primary">Mes Projets</h1>
+          <h1 class="text-3xl font-bold mb-4 fade-in text-primary">
+            Mes Projets
+          </h1>
           <p
             class="text-lg text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
           >
-            Une collection de mes travaux  et projets personnels
+            Une collection de mes travaux et projets personnels
           </p>
         </div>
       </div>
@@ -31,7 +33,9 @@
               class="project-card fade-in"
               :class="`delay-${(index % 3) * 100}`"
             >
-              <UCard class="h-full flex flex-col transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <UCard
+                class="h-full flex flex-col transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              >
                 <template #header>
                   <div class="overflow-hidden">
                     <img
@@ -98,7 +102,7 @@ const projects = [
     description:
       "Une plateforme (demo) de calculatrice scientifique qui permet de réaliser des opérations mathématiques de base.",
     image: "assets/my_calculator.png",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    technologies: ["HTML", "tailwinds css", "JavaScript (TypeScript)"],
     demo: "https://mycalculator-beta.vercel.app/",
     github: "https://github.com/chiracmichoagan/mycalculator",
   },
@@ -134,13 +138,13 @@ onMounted(() => {
         scrollTrigger: {
           trigger: ".project-card",
           start: "top bottom-=100",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
         },
         opacity: 0,
         y: 50,
         stagger: 0.2,
         duration: 1,
-        ease: "power3.out"
+        ease: "power3.out",
       });
     });
   }
@@ -189,7 +193,7 @@ onMounted(() => {
 }
 
 .UButton::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

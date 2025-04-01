@@ -1,4 +1,4 @@
-<header class="p-4 bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 ">
+<header class="p-4 bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <NuxtLink to="/" class="text-xl font-bold">DONA Portfolio</NuxtLink>
 
