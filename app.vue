@@ -1,55 +1,53 @@
 <template>
   <ClientOnly>
     <div
-      class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors flex flex-col"
-    >
-      <header
-        class="p-4 bg-white dark:bg-gray-800 shadow-2xl sticky top-0 z-50"
-      >
+      class="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors flex flex-col">
+      <header class="p-4 bg-white dark:bg-gray-800 shadow-2xl sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-          <NuxtLink
-            to="/"
-            class="text-xl font-bold flex items-center justify-center gap-2"
-          >
+          <NuxtLink to="/" class="text-xl font-bold flex items-center justify-center gap-2">
             <!-- drapeau Cap-Vert -->
-            <img
-              src="./public/assets/image_dona.png"
-              class="w-10 h-10 rounded-full"
-            />
+            <img src="./public/assets/image_dona.png" class="w-10 h-10 rounded-full" />
           </NuxtLink>
 
           <!-- Navigation  -->
           <nav class="flex items-center space-x-6 relative">
             <!-- Menu desktop (affiché uniquement sur les écrans larges) -->
             <div class="hidden md:flex items-center space-x-6">
-              <NuxtLink
-                v-for="item in navItems"
-                :key="item.to"
-                :to="item.to"
-                class="hover:text-blue-600 transition-colors flex items-center gap-2"
-                active-class="text-blue-600 font-semibold"
-              >
-                {{ item.label }}
+              <NuxtLink to="/" class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold">
+                {{ $t('Accueil') }}
               </NuxtLink>
+              <NuxtLink class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold">
+
+              </NuxtLink>
+              <NuxtLink to="/about" class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold">
+                {{ $t('À propos') }}
+              </NuxtLink>
+              <NuxtLink to="/projects" class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold">
+                {{ $t('Projets') }}
+              </NuxtLink>
+              <NuxtLink to="/contact" class="hover:text-blue-600 transition-colors flex items-center gap-2"
+                active-class="text-blue-600 font-semibold">
+                {{ $t('Contact') }}
+              </NuxtLink>
+
+
             </div>
+
             <!-- Icône de menu  ( uniquement sur mobile) -->
             <div @click="toggleMenu" class="md:hidden cursor-pointer mt-2">
               <UIcon name="i-heroicons-bars-3" class="text-2xl" />
             </div>
 
             <!-- Menu mobile déroulant -->
-            <div
-              v-show="isMenuOpen"
-              class="absolute top-12 right-0 bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4 md:hidden transition-all duration-300 ease-in-out z-50 w-48"
-            >
-              <NuxtLink
-                v-for="item in navItems"
-                :key="item.to"
-                :to="item.to"
+            <div v-show="isMenuOpen"
+              class="absolute top-12 right-0 bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4 md:hidden transition-all duration-300 ease-in-out z-50 w-48">
+              <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to"
                 class="hover:text-blue-600 transition-colors flex items-center gap-2"
-                active-class="text-blue-600 font-semibold"
-                @click="closeMenu"
-              >
+                active-class="text-blue-600 font-semibold" @click="closeMenu">
                 <UIcon v-if="item.icon" :name="item.icon" class="text-lg" />
                 {{ item.label }}
               </NuxtLink>
@@ -57,76 +55,47 @@
           </nav>
 
           <div class="flex items-center space-x-4">
-            <button
-              @click="toggleDarkMode"
-              :class="{
-                'p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors flex items-center justify-center':
-                  darkMode,
-              }"
-            >
-              <UIcon
-                :name="darkMode ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-                class="text-xl"
-              />
+            <button @click="toggleDarkMode" :class="{
+              'p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors flex items-center justify-center':
+                darkMode,
+            }">
+              <UIcon :name="darkMode ? 'i-heroicons-sun' : 'i-heroicons-moon'" class="text-xl" />
             </button>
-            <button
-              @click="toggleTerminal"
+            <button @click="toggleTerminal"
               class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors flex items-center"
-              :class="{ 'bg-primary-100 dark:bg-primary-900': showTerminal }"
-            >
+              :class="{ 'bg-primary-100 dark:bg-primary-900': showTerminal }">
               <UIcon name="i-heroicons-command-line" class="text-xl" />
             </button>
-            <!-- <LanguageSelector /> -->
-            <div class="relative inline-block text-left">
-              <div class="group">
-                <button
-                  type="button"
-                  class="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                >
-                  choissisez votre langue
-                  <!-- Dropdown arrow -->
-                  <svg
-                    class="w-4 h-4 ml-2 -mr-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
-                  </svg>
-                </button>
 
-                <!-- Dropdown menu -->
-                <div
-                  class="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300"
-                >
-                  <div class="py-1">
-                    <a
-                      href="#"
-                      class="block px-4 py-2 flex text-sm text-gray-700 hover:bg-gray-100"
-                      ><img
-                        src="/assets/flags/fr.svg"
-                        alt="logo_de_la_langue_fr"
-                        class="w-10 h-10 rounded-sm"
-                      /><span class="flex gap-2 mt-1 p-1">Français</span></a
-                    >
-                    <a
-                      href="#"
-                      class="block px-4 py-2 text-sm flex text-gray-700 hover:bg-gray-100"
-                      ><img
-                        src="/assets/flags/en.svg"
-                        alt="logo_lang_englais"
-                        class="w-9 h-9 rounded-sm"
-                      /><span class="flex gap-2 mt-1 p-1">English</span></a
-                    >
-                    <!-- <a
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >Option 3</a
-                    > -->
-                  </div>
-                </div>
-              </div>
+            <div class="relative inline-block text-left">
+              <label for="lang" class="sr-only">Choisissez votre langue</label>
+              <select id="lang" v-model="$i18n.locale"
+                class="block appearance-none w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white py-2 px-4 pr-8 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="fr">🇫🇷 Français</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
             </div>
+
+            <!-- Traduire la page web -->
+            <!-- <div class="relative inline-block text-left"> -->
+            <!-- <label for="lang" class="sr-only">
+                choissisez votre langue
+               </label> -->
+            <!-- <label for="lang" class="sr-only">Choisissez votre langue</label>
+              <select
+                class="appearance-none w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white py-2 px-4 pr-8 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option>
+                  🇫🇷 Français
+                </option>
+                <option>🇬🇧 English</option>
+              </select> -->
+
+
+
+
+
+            <!-- </div> -->
+
           </div>
         </div>
       </header>
@@ -134,20 +103,18 @@
       <main class="container mx-auto p-6">
         <NuxtPage />
       </main>
+
+
       <!-- Pied de page -->
       <footer class="bg-white dark:bg-gray-800 shadow-md py-12 mt-auto">
         <div class="container mx-auto px-4">
-          <div
-            class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0"
-          >
+          <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <!-- Section Présentation -->
             <div class="text-center md:text-left">
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 DONA Portfolio
               </h3>
-              <p
-                class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0"
-              >
+              <p class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0">
                 Développeur Full Stack passionné par la création d'applications
                 web modernes
               </p>
@@ -155,18 +122,12 @@
 
             <!-- Section Liens rapides -->
             <div class="text-center md:text-left">
-              <h4
-                class="font-semibold text-lg text-gray-900 dark:text-white mb-3"
-              >
+              <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
                 Liens rapides
               </h4>
               <div class="flex flex-col space-y-2 items-center md:items-start">
-                <NuxtLink
-                  v-for="item in navItems"
-                  :key="item.to"
-                  :to="item.to"
-                  class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                >
+                <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to"
+                  class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
                   {{ item.label }}
                 </NuxtLink>
               </div>
@@ -174,34 +135,20 @@
 
             <!-- Section Réseaux sociaux -->
             <div class="text-center md:text-left">
-              <h4
-                class="font-semibold text-lg text-gray-900 dark:text-white mb-3"
-              >
+              <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
                 Réseaux sociaux
               </h4>
               <div class="flex justify-center space-x-4 md:justify-start">
-                <a
-                  href="https://github.com/chiracmichoagan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                >
+                <a href="https://github.com/chiracmichoagan" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
                   <UIcon name="i-simple-icons-github" class="text-2xl" />
                 </a>
-                <a
-                  href="https://linkedin.com/chiracmichoagan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                >
+                <a href="https://linkedin.com/chiracmichoagan" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
                   <UIcon name="i-simple-icons-linkedin" class="text-2xl" />
                 </a>
-                <a
-                  href="https://x.com/@teixeira00125"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
-                >
+                <a href="https://x.com/@teixeira00125" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors">
                   <UIcon name="i-simple-icons-twitter" class="text-2xl" />
                 </a>
               </div>
@@ -210,34 +157,25 @@
 
           <!-- Copyright et Mention -->
           <div
-            class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400"
-          >
+            class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
             <p class="flex items-center justify-center gap-3">
               &copy; {{ new Date().getFullYear() }} DONA Portfolio. Tous droits
               réservés.
               <!-- drapeau Cap-Vert -->
-              <img
-                src="./public/assets/image_dona.png"
-                class="w-6 h-6 rounded-full"
-              />
+              <img src="./public/assets/image_dona.png" class="w-6 h-6 rounded-full" />
             </p>
           </div>
         </div>
       </footer>
 
       <!-- Terminal flottant -->
-      <div
-        v-if="showTerminal"
+      <div v-if="showTerminal"
         class="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 shadow-lg transition-all duration-300"
-        :class="{ 'h-96': showTerminal, 'h-0': !showTerminal }"
-      >
+        :class="{ 'h-96': showTerminal, 'h-0': !showTerminal }">
         <div class="container mx-auto p-4 h-full">
           <div class="flex justify-between items-center mb-2">
             <h3 class="text-white font-semibold">Terminal Interactif</h3>
-            <button
-              @click="toggleTerminal"
-              class="text-white hover:text-blue-600"
-            >
+            <button @click="toggleTerminal" class="text-white hover:text-blue-600">
               <UIcon name="i-heroicons-x-mark" class="text-xl" />
             </button>
           </div>
@@ -253,7 +191,6 @@
 
 <script setup>
 import { ref } from "vue";
-import LanguageSelector from "~/components/LanguageSelector.vue";
 import ChatBot from "~/components/ChatBot.vue";
 
 const darkMode = ref(false);

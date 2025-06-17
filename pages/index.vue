@@ -4,7 +4,7 @@
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-5xl font-bold mb-6 fade-in">
-            Bonjour, je suis
+            {{ $t('Bonjour, je suis') }}
             <span class="text-primary-500">Dona Chirac MICHOAGAN</span>
           </h1>
           <p
