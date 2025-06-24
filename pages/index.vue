@@ -4,23 +4,21 @@
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-5xl font-bold mb-6 fade-in">
-            {{ $t('Bonjour, je suis') }}
+            {{ $t('Salut') }},
+            {{ $t('je suis') }}
             <span class="text-primary-500">Dona Chirac MICHOAGAN</span>
           </h1>
           <p
             class="text-xl text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
           >
-            Développeur web full-stack passionné par l'optimisation des
-            performances et la création d'interfaces utilisateur intuitives,
-            disponible pour contribuer à des projets innovants dans un
-            environnement collaboratif.
+            {{ $t("Développeur web full-stack passionné par l'optimisation des performances et la création d'interfaces utilisateur intuitives,disponible pour contribuer à des projets innovants dans un environnement collaboratif.") }}
           </p>
           <div class="flex justify-center space-x-4 fade-in delay-200">
             <UButton to="/projects" color="blue" size="lg">
-              Voir mes projets ->
+              {{ $t("Voir mes projets ->") }}
             </UButton>
             <UButton to="/contact" color="primary" variant="outline" size="lg">
-              Me contacter
+              {{$t("Me contacter")}}
             </UButton>
           </div>
         </div>
@@ -31,7 +29,7 @@
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold mb-8 text-center fade-in">
-            Mes compétences
+           {{ $t("Mes compétences")}}
           </h2>
           <div class="grid md:grid-cols-3 gap-8">
             <UCard class="fade-in delay-100">
@@ -43,10 +41,9 @@
                   />
                 </div>
               </template>
-              <h3 class="text-xl font-semibold mb-2">Développement Web</h3>
+              <h3 class="text-xl font-semibold mb-2">{{$t("Développement Web")}}</h3>
               <p class="text-gray-600 dark:text-gray-400">
-                Création d'interfaces utilisateur intuitives, dynamiques et
-                professionnelles avec les technologies modernes.
+                {{$t("Création d'interfaces utilisateur intuitives, dynamiques et professionnelles avec les technologies modernes.")}}
               </p>
             </UCard>
 
@@ -60,11 +57,10 @@
                 </div>
               </template>
               <h3 class="text-xl font-semibold mb-2">
-                Analyse et gestion de sécurité des systèmes
+               {{$t("Analyse et gestion de sécurité des systèmes")}}
               </h3>
               <p class="text-gray-600 dark:text-gray-400">
-                Sécurisation des systèmes informatiques et optimisation des
-                performances réseau !
+                {{$t("Sécurisation des systèmes informatiques et optimisation des performances réseau !")}}
               </p>
             </UCard>
 
@@ -77,10 +73,9 @@
                   />
                 </div>
               </template>
-              <h3 class="text-xl font-semibold mb-2">Développement Mobile</h3>
+              <h3 class="text-xl font-semibold mb-2">{{$t("Développement Mobile")}}</h3>
               <p class="text-gray-600 dark:text-gray-400">
-                Création d'applications mobiles multiplateformes fonctionnant
-                sur tous les appareils.
+               {{$t("Création d'applications mobiles multiplateformes fonctionnant sur tous les appareils.")}}
               </p>
             </UCard>
           </div>
@@ -91,7 +86,7 @@
     <section class="py-16 bg-gray-50 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-8 fade-in">Projets à la une</h2>
+          <h2 class="text-3xl font-bold mb-8 fade-in">{{$t("Projets à la une")}}</h2>
           <div class="grid md:grid-cols-2 gap-8">
             <UCard
               class="fade-in delay-100"
@@ -109,20 +104,20 @@
               <p class="text-gray-600 dark:text-gray-400 mb-4">
                 {{ project.description }}
               </p>
-              <!-- <template #footer>
+              <template #footer>
                 <UButton
                   :to="`/projects/${index}`"
                   color="primary"
                   variant="ghost"
                 >
-                  Voir les détails
+                  {{$t("Voir les détails")}}
                 </UButton>
-              </template> -->
+              </template>
             </UCard>
           </div>
           <div class="mt-8 fade-in delay-300">
             <UButton to="/projects" color="blue">
-              Voir tous les projets
+             {{$t("Voir tous les projets")}}
             </UButton>
           </div>
         </div>

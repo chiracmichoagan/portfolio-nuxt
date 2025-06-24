@@ -72,7 +72,7 @@
               <select id="lang" v-model="$i18n.locale"
                 class="block appearance-none w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white py-2 px-4 pr-8 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="fr">🇫🇷 Français</option>
-                <option value="en">🇬🇧 English</option>
+                <option value="en">en English</option>
               </select>
             </div>
 
@@ -112,18 +112,17 @@
             <!-- Section Présentation -->
             <div class="text-center md:text-left">
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                DONA Portfolio
+                {{$t("DONA Portfolio")}}
               </h3>
               <p class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0">
-                Développeur Full Stack passionné par la création d'applications
-                web modernes
+               {{$t("Développeur Full Stack passionné par la création d'applications web modernes")}}
               </p>
             </div>
 
             <!-- Section Liens rapides -->
             <div class="text-center md:text-left">
               <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
-                Liens rapides
+                {{$t("Liens rapides")}}
               </h4>
               <div class="flex flex-col space-y-2 items-center md:items-start">
                 <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to"
@@ -136,7 +135,7 @@
             <!-- Section Réseaux sociaux -->
             <div class="text-center md:text-left">
               <h4 class="font-semibold text-lg text-gray-900 dark:text-white mb-3">
-                Réseaux sociaux
+               {{$t("Réseaux sociaux")}}
               </h4>
               <div class="flex justify-center space-x-4 md:justify-start">
                 <a href="https://github.com/chiracmichoagan" target="_blank" rel="noopener noreferrer"
@@ -159,8 +158,7 @@
           <div
             class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
             <p class="flex items-center justify-center gap-3">
-              &copy; {{ new Date().getFullYear() }} DONA Portfolio. Tous droits
-              réservés.
+              &copy; {{ new Date().getFullYear() }} {{$t("DONA Portfolio. Tous droits réservés.")}}
               <!-- drapeau Cap-Vert -->
               <img src="./public/assets/image_dona.png" class="w-6 h-6 rounded-full" />
             </p>

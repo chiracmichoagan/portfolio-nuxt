@@ -4,12 +4,12 @@
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-3xl font-bold mb-4 fade-in text-primary">
-            Mes Projets
+           {{$t("Mes Projets")}}
           </h1>
           <p
             class="text-lg text-gray-600 dark:text-gray-400 mb-8 fade-in delay-100"
           >
-            Une collection de mes travaux et projets personnels
+            {{$t("Une collection de mes travaux et projets personnels")}}
           </p>
         </div>
       </div>
@@ -21,7 +21,7 @@
           <h3
             class="font-general-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4"
           >
-            Rechercher des projets par titre ou filtrer par catégorie
+            {{$t("Rechercher des projets par titre ou filtrer par catégorie")}}
           </h3>
           <div
             class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2"
@@ -113,7 +113,7 @@
                       color="gray"
                       variant="ghost"
                     >
-                      <UIcon name="i-simple-icons-github" class="mr-1" /> GitHub
+                      <UIcon name="i-simple-icons-github" class="mr-1" /> {{$t("GitHub")}}
                     </UButton>
                   </div>
                 </template>
