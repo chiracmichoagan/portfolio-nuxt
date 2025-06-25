@@ -112,7 +112,7 @@
             <!-- Section Présentation -->
             <div class="text-center md:text-left">
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                {{$t("DONA Portfolio")}}
+                DONA Portfolio
               </h3>
               <p class="text-sm text-gray-600 dark:text-gray-400 max-w-xs mx-auto md:mx-0">
                {{$t("Développeur Full Stack passionné par la création d'applications web modernes")}}
