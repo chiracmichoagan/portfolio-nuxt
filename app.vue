@@ -44,7 +44,7 @@
 
             <!-- Menu mobile déroulant -->
             <div v-show="isMenuOpen"
-              class="absolute top-12 right-0 bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4 md:hidden transition-all duration-300 ease-in-out z-50 w-48">
+              class="absolute top-12 left-0 right-0 bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 flex flex-col space-y-4 md:hidden transition-all duration-300 ease-in-out z-50 w-48">
               <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to"
                 class="hover:text-blue-600 transition-colors flex items-center gap-2"
                 active-class="text-blue-600 font-semibold" @click="closeMenu">
