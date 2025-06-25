@@ -158,7 +158,7 @@
           <div
             class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 text-center text-sm text-gray-600 dark:text-gray-400">
             <p class="flex items-center justify-center gap-3">
-              &copy; {{ new Date().getFullYear() }} {{$t("DONA Portfolio. Tous droits réservés.")}}
+              &copy; {{ new Date().getFullYear() }} DONA Portfolio. {{$t("Tous droits réservés.")}}
               <!-- drapeau Cap-Vert -->
               <img src="./public/assets/image_dona.png" class="w-6 h-6 rounded-full" />
             </p>
